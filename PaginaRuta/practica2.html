@@ -28,14 +28,11 @@
 
     <p class="datos"></p>
 
-    <p class="parrafos texto1">Este es un parrafo</p>
-    <p class="parrafos2">Este es un parrafo2</p>
-
     <ul id="Navegador">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li id="1"></li>
+        <li id="2"></li>
+        <li id="3"></li>
+        <li id="4"></li>
     </ul>
 
     <script>
@@ -43,10 +40,10 @@
         var datos = document.getElementsByTagName("li");
 
         function obtienedatos(){
-            console.log("Nombre del Navegador:"+navigator.appCodeName);
-            console.log( "Version del Navegador:"+navigator.appVersion);
-            console.log("Estatus del Navegador:"+navigator.onLine);
-            console.log("Nombre del Navegador:"+navigator.platform);
+           document.getElementById("1").innerHTML = navigator.appCodeName;
+           document.getElementById("2").innerHTML = navigator.appVersion;
+           document.getElementById("3").innerHTML = navigator.onLine;
+           document.getElementById("4").innerHTML = navigator.platform;
 
         }
     </script>
