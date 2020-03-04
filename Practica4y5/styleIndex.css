@@ -46,6 +46,15 @@ body {
     background-image: url('https://3.bp.blogspot.com/-o7T6JYUJFkQ/Vpgn5tMzB6I/AAAAAAAAEA4/eFG1QQcc8i0/s1600/google-maps-api-v3-lesson-1_1317724414567.png');
 }
 
+.card--6 .card__img, .card--6 .card__img--hover {
+  background-image: url('https://i.ytimg.com/vi/iosNuIdQoy8/maxresdefault.jpg');
+}
+
+.card--7 .card__img, .card--7 .card__img--hover {
+  background-image: url('https://image.freepik.com/vector-gratis/proximamente-letrero-neon_118419-15.jpg');
+}
+
+
 .card__img {
   visibility: hidden;
     background-size: cover;
