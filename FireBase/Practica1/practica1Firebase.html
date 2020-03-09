@@ -7,17 +7,28 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+   <link rel="stylesheet" type="text/css" href="../Practica1/stylefirebase.css">
 </head>
 <body>
 
-    <h1>Lista de Productos</h1>
+    <h1>Agregar A Carrito</h1>
     <form id="forma">
-        <input type="text" name="nombre" placeholder="Nombre">
-        <input type="text" name="codigo" placeholder="Codigo">
+      <div> <input type="text" name="nombre"  class="input_group" placeholder="Nombre"></div>
+      <div><input type="text" name="codigo" class="input_group" placeholder="Codigo"></div>
         <button type="submit">Agregar</button>
     </form>
 
-    <ul id="Lista" class="list-group"></ul>
+    
+
+    <div >
+      <div class="toolbar">
+      </div>
+      <ul id="Lista" class="list">
+        <h1 class="title">
+          LISTA PRODUCTOS
+        </h1>
+      </ul>
+    </div>
 
    
 
@@ -71,15 +82,20 @@ function renderProductos(doc){
       let nombre = document.createElement("span");
       let codigo = document.createElement("span");
       let borrar = document.createElement("button");
+      let espacio = document.createElement("hr");
+      let salto = document.createElement("br");
 
       nombre.textContent = doc.data().Nombre + " ";
       codigo.textContent = doc.data().Codigo + " ";
       borrar.textContent = "Borrar";
+      
 
       li.setAttribute("id",doc.id);
       li.appendChild(borrar);
       li.appendChild(nombre);
       li.appendChild(codigo);
+      li.appendChild(espacio);
+      li.appendChild(salto);
 
 
       productoslista.appendChild(li);
