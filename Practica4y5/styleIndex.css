@@ -51,6 +51,10 @@ body {
 }
 
 .card--7 .card__img, .card--7 .card__img--hover {
+  background-image: url('https://www.osi.es/sites/default/files/images/blog/riesgos.png');
+} 
+
+.card--8 .card__img, .card--8 .card__img--hover {
   background-image: url('https://image.freepik.com/vector-gratis/proximamente-letrero-neon_118419-15.jpg');
 }
 
