@@ -1,68 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
     <style>
-        #map{
-            height: 100%;
-        }
-        html,body{
-            height: 100%;
-            padding: 0%;
-            margin: 0%;
-        }
+ 
+      #map {
+        height: 100%;
+      }
+ 
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="map"></div>
-
     <script>
-        var coordenada = {
-            lat: 0,
-            lng: 0
-        }
-        var propiedades = {
-            center: coordenada,
-            zoom: 20
-        }
-        function iniciaMapa(){
-            map = new google.maps.Map(document.getElementById("map"), propiedades);
+ 
+      var map;
 
-            var icono = {
-                url: "https://i.ya-webdesign.com/images/car-gif-png-1.gif",
-                scaledSize: new google.maps.Size(50,50),
-                origin: new google.maps.Point(0,0),
-                anchor: new google.maps.Point(0,0),
-            }
+      var coordenadas = {
+        lat: 0, 
+        lng: 0
+      }
 
-            var marker = new google.maps.Marker({
-                position: {lat: 0, lng: 0},
-                icon : icono,
-                map: map
-            });
+      var propiedades = {
+        center: coordenadas,
+        zoom: 20
+      }
 
-            if(navigator.geolocation){
-                setInterval(function(){
-                    moverPosicion(marker);
-                },3000);
-            }
+      function iniciaMapa() {
+
+        map = new google.maps.Map(document.getElementById('map'), propiedades);
+        var icono = {
+                url: "https://media.giphy.com/media/1ZweHMlSaxcc32mSSu/giphy.gif", 
+                scaledSize: new google.maps.Size(50, 50),  
+                origin: new google.maps.Point(0,0),  
+                anchor: new google.maps.Point(0,0) 
+            };
+        var marker = new google.maps.Marker({
+            position: { lat: 0, lng: 0 },
+            icon: icono,
+
+            map: map
+        });
+
+        if(navigator.geolocation){
+
+            setInterval(function(){
+                moverPosicion(marker);
+            },5000);
+            
         }
+ 
+      }
 
-        function moverPosicion(){
-            navigator.geolocation.getCurrentPosition(posicion => {
-                var pos = {
-                    lat: posicion.coords.latitude,
-                    lng: posicion.coords.longitude
-                }
-                marker.setPosition(new google.maps.LatLng(posicion.coords.latitude,posicion.coords.longitude));
-                map.panTo(new google.maps.LatLng(posicion.coords.latitude,posicion.coords.longitude));
-                map.setCenter(pos);
-            });
-        }
+      function moverPosicion(marker) {
+        navigator.geolocation.getCurrentPosition( posicion => {
+            var pos = {
+              lat: posicion.coords.latitude,
+              lng: posicion.coords.longitude
+            };
+            marker.setPosition( new google.maps.LatLng( posicion.coords.latitude, posicion.coords.longitude ) );
+            map.panTo( new google.maps.LatLng( posicion.coords.latitude, posicion.coords.longitude ) );
+            map.setCenter(pos);
+
+        });
+
+      }
+
+
+
+ 
     </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA&callback=iniciaMapa"></script>
-</body>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA&callback=iniciaMapa">
+    </script>
+  </body>
 </html>
