@@ -73,10 +73,9 @@
                     let latlng = document.createElement("span");
                     latlng.textContent = doc.data().Latitud + " , " + doc.data().Longitud + " ";
                     li.setAttribute("id",doc.id);
-                    li.appendChild(latlng);
+                    li.appendChild(lat);
                     listapersona.appendChild(li);
-                    let id = e.target.parentElement.getAttribute("id");
-                    db.collection('Persona').doc(id).update({
+                    db.collection('Persona').doc(doc.id).update({
                         Latitud: position.coords.latitude,
                         Longitud: position.coords.longitude   
                     });
