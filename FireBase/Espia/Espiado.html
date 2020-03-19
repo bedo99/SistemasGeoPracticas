@@ -55,30 +55,33 @@
                 Longitud: position.coords.longitude         
             });
         }
-        
+
         setInterval(function() {
                     if(navigator.geolocation){
                         ActualizarPosicion();
                     }
         }, 5000);        
            
-        function ActualizarPosicion(position){
+        function ActualizarPosicion(){
+            navigator.geolocation.getCurrentPosition(updatePosition);     
+        }
+
+        function updatePosition(position){
             db.collection('Persona').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                     let li = document.createElement("li");
-                    let lat = document.createElement("span");
-                    lat.textContent = doc.data().Latitud + " ";
+                    let latlng = document.createElement("span");
+                    latlng.textContent = doc.data().Latitud + " , " + doc.data().Longitud + " ";
                     li.setAttribute("id",doc.id);
-                    li.appendChild(lat);
+                    li.appendChild(latlng);
                     listapersona.appendChild(li);
                     let id = e.target.parentElement.getAttribute("id");
-                    db.collection('Persona').doc(doc.id).update({
+                    db.collection('Persona').doc(id).update({
                         Latitud: position.coords.latitude,
                         Longitud: position.coords.longitude   
                     });
                 });
             });
-            
         }
 
 
