@@ -13,7 +13,8 @@
  </head>
  
  <body>
-    <input type="hidden" name="ideditar" id="ideditar">
+    
+    <ul id="ListaPersona"></ul>
 
     <script>
         // Your web app's Firebase configuration
@@ -29,6 +30,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
+        const listapersona = document.querySelector("#ListaPersona");
 
         /*db.collection("Persona").onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
@@ -49,7 +51,6 @@
        
         function showPosition(position){
             db.collection("Persona").add({
-                Nombre:  null,
                 Latitud: position.coords.latitude,
                 Longitud: position.coords.longitude         
             });
@@ -61,14 +62,23 @@
                     }
         }, 5000);        
            
-        function ActualizarPosicion(){
-            const persona = db.collection('Persona');
-            const x = persona.where("Nombre","==","yo")
-            x.update({
-                Latitud: position.coords.latitude,
-                Longitud: position.coords.longitude         
-            });  
+        function ActualizarPosicion(position){
+            db.collection('Persona').get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    let li = document.createElement("li");
+                    li.setAttribute("id",doc.id);
+                    listapersona.appendChild(li);
+                    let id = e.target.parentElement.getAttribute("id");
+                    db.collection('Persona').doc(id).update({
+                        Latitud: position.coords.latitude,
+                        Longitud: position.coords.longitude   
+                    });
+                });
+            });
+            
         }
+
+
     </script>
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
