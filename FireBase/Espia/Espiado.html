@@ -28,13 +28,11 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        
-            if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(showPosition); 
-            }
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition); 
+        }
        
         function showPosition(position){
-            
             db.collection("Persona").add({
                 Nombre:  null,
                 Latitud: position.coords.latitude,
@@ -42,8 +40,6 @@
             });
         }
         
-        
-
         setInterval(function() {
                     if(navigator.geolocation){
                         ActualizarPosicion();
@@ -51,7 +47,10 @@
         }, 5000);        
            
         function ActualizarPosicion(){
-            
+            db.collection('Persona').doc(id).update({
+                Latitud: position.coords.latitude,
+                Longitud: position.coords.longitude         
+            });  
         }
     </script>
     
