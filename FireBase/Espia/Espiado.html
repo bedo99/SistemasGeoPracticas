@@ -63,7 +63,7 @@
                     listapersona.appendChild(li);
 
                     fireupdate(doc.id);
-                    
+
                 });
             });
         }
@@ -71,8 +71,8 @@
         function fireupdate(id){
             navigator.geolocation.getCurrentPosition(posicion => {
                 db.collection('Persona').doc(id).update({
-                        Latitud: position.coords.latitude,
-                        Longitud: position.coords.longitude   
+                        Latitud: posicion.coords.latitude,
+                        Longitud: posicion.coords.longitude   
                 });
             });   
             
