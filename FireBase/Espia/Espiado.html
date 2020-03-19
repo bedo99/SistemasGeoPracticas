@@ -13,6 +13,8 @@
  </head>
  
  <body>
+    <input type="hidden" name="ideditar" id="ideditar">
+
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -27,6 +29,19 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
+
+        /*db.collection("Persona").onSnapshot(snapshot => {
+            let changes = snapshot.docChanges();
+            changes.forEach(change => {
+                if(change.type == "added"){
+                renderProductos(change.doc)
+                }
+                else if(change.type == "removed"){
+                let valorid = document.getElementById(change.doc.id);
+                Lista.removeChild(valorid);
+                }
+            });
+        });*/
 
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(showPosition); 
@@ -47,7 +62,9 @@
         }, 5000);        
            
         function ActualizarPosicion(){
-            db.collection('Persona').doc(id).update({
+            const persona = db.collection('Persona');
+            const x = persona.where("Nombre","==","yo")
+            x.update({
                 Latitud: position.coords.latitude,
                 Longitud: position.coords.longitude         
             });  
