@@ -73,16 +73,26 @@
                     let latlng = document.createElement("span");
                     latlng.textContent = doc.data().Latitud + " , " + doc.data().Longitud + " ";
                     li.setAttribute("id",doc.id);
-                    li.appendChild(lat);
+                    li.appendChild(latlng);
                     listapersona.appendChild(li);
-                    db.collection('Persona').doc(doc.id).update({
-                        Latitud: position.coords.latitude,
-                        Longitud: position.coords.longitude   
-                    });
+                    fireupdate(doc.id);
                 });
             });
         }
 
+        function fireupdate(doc){
+            navigator.geolocation.getCurrentPosition(posicion => {
+                var pos = {
+                    lat : posicion.coords.latitude,
+                    lng : posicion.coords.longitude
+                }
+                db.collection('Persona').doc(doc).update({
+                        Latitud: position.coords.latitude,
+                        Longitud: position.coords.longitude   
+                });
+            });   
+            
+        }
 
     </script>
     
