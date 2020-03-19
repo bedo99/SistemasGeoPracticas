@@ -32,18 +32,6 @@
         const db = firebase.firestore();
         const listapersona = document.querySelector("#ListaPersona");
 
-        /*db.collection("Persona").onSnapshot(snapshot => {
-            let changes = snapshot.docChanges();
-            changes.forEach(change => {
-                if(change.type == "added"){
-                renderProductos(change.doc)
-                }
-                else if(change.type == "removed"){
-                let valorid = document.getElementById(change.doc.id);
-                Lista.removeChild(valorid);
-                }
-            });
-        });*/
 
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(showPosition); 
@@ -58,35 +46,31 @@
 
         setInterval(function() {
                     if(navigator.geolocation){
-                        ActualizarPosicion();
+                        updatePosition();
                     }
         }, 5000);        
-           
-        function ActualizarPosicion(){
-            navigator.geolocation.getCurrentPosition(updatePosition);     
-        }
 
-        function updatePosition(position){
+        function updatePosition(){
             db.collection('Persona').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
+
                     let li = document.createElement("li");
                     let latlng = document.createElement("span");
                     latlng.textContent = doc.data().Latitud + " , " + doc.data().Longitud + " ";
+
                     li.setAttribute("id",doc.id);
                     li.appendChild(latlng);
                     listapersona.appendChild(li);
+
                     fireupdate(doc.id);
+                    
                 });
             });
         }
 
-        function fireupdate(doc){
+        function fireupdate(id){
             navigator.geolocation.getCurrentPosition(posicion => {
-                var pos = {
-                    lat : posicion.coords.latitude,
-                    lng : posicion.coords.longitude
-                }
-                db.collection('Persona').doc(doc).update({
+                db.collection('Persona').doc(id).update({
                         Latitud: position.coords.latitude,
                         Longitud: position.coords.longitude   
                 });
