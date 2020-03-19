@@ -65,11 +65,7 @@
         function ActualizarPosicion(position){
             db.collection('Persona').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
-                    let li = document.createElement("li");
-                    li.setAttribute("id",doc.id);
-                    listapersona.appendChild(li);
-                    let id = e.target.parentElement.getAttribute("id");
-                    db.collection('Persona').doc(id).update({
+                    db.collection('Persona').doc(doc.id).update({
                         Latitud: position.coords.latitude,
                         Longitud: position.coords.longitude   
                     });
