@@ -63,21 +63,18 @@
         function updatePosition(){
             db.collection('Persona').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
-
-                    navigator.geolocation.getCurrentPosition(posicion => {
-                        db.collection('Persona').doc(doc.id).update({
-                                Latitud: posicion.coords.latitude,
-                                Longitud: posicion.coords.longitude   
-                        });
-                    });
-
+                        fireupdate(doc.id);
                 });
             });
         }
 
         function fireupdate(id){
-               
-            
+            navigator.geolocation.getCurrentPosition(posicion => {
+                        db.collection('Persona').doc(id).update({
+                                Latitud: posicion.coords.latitude,
+                                Longitud: posicion.coords.longitude   
+                        });
+                    });
         }
 
         function renderPersonas(doc){
