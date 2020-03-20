@@ -53,7 +53,7 @@
                 }
                 else if(change.type === "modified"){
                     let valorid = document.getElementById(change.doc.id);
-                    ListaPersona.updatedChild(valorid);
+                    ListaPersona.modifiedChild(valorid);
                 }
                 else if(change.type == "removed"){
                 let valorid = document.getElementById(change.doc.id);
@@ -69,7 +69,7 @@
         }, 5000);        
 
         function updatePosition(){
-            db.collection('Persona').get().then((snapshot) => {
+            db.collection('Persona').doc().get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                         fireupdate(doc.id);
                 });
