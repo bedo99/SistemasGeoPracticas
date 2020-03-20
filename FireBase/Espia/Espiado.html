@@ -48,13 +48,9 @@
         db.collection("Persona").onSnapshot(snapshot => {
             let changes = snapshot.docChanges();
             changes.forEach(change => {
-                if(change.type === "modified"){
-                    
-                }
-                else if(change.type === "added"){
+                if(change.type === "added"){
                     renderPersonas(change.doc);
                 }
-                
             });
         });
 
@@ -76,7 +72,7 @@
 
         function fireupdate(id){
             navigator.geolocation.getCurrentPosition(posicion => {
-                db.collection('Persona').where("ID","==",id).update({
+                db.collection('Persona').doc(id).update({
                         Latitud: posicion.coords.latitude,
                         Longitud: posicion.coords.longitude   
                 });
