@@ -76,7 +76,7 @@
 
         function fireupdate(id){
             navigator.geolocation.getCurrentPosition(posicion => {
-                db.collection('Persona').where(id).update({
+                db.collection('Persona').where("id","==",id).update({
                         Latitud: posicion.coords.latitude,
                         Longitud: posicion.coords.longitude   
                 });
