@@ -69,7 +69,7 @@
         }, 5000);        
 
         function updatePosition(){
-            db.collection('Persona').doc().get().then((snapshot) => {
+            db.collection('Persona').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                         fireupdate(doc.id);
                 });
