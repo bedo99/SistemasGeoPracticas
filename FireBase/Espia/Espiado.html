@@ -51,6 +51,10 @@
                 if(change.type === "added"){
                     renderPersonas(change.doc);
                 }
+                else if(change.type === "modified"){
+                    let valorid = document.getElementById(change.doc.id);
+                    ListaPersona.updateChild(valorid);
+                }
             });
         });
 
@@ -81,7 +85,6 @@
             let li = document.createElement("li");
             let latlng = document.createElement("span");
             latlng.textContent = doc.data().Latitud + " , " + doc.data().Longitud + " ";
-
             li.setAttribute("id",doc.id);
             li.appendChild(latlng);
             listapersona.appendChild(li);
