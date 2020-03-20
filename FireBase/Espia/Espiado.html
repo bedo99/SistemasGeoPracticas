@@ -53,7 +53,7 @@
                 }
                 else if(change.type === "modified"){
                     let valorid = document.getElementById(change.doc.id);
-                    ListaPersona.removeChild(valorid);
+                    ListaPersona.modifyChild(valorid);
                 }
             });
         });
