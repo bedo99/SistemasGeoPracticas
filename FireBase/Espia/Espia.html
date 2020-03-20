@@ -7,9 +7,85 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #map {
+             height: 600px;
+             width: 100%;
+             background-color: #efefef;
+         }
+     </style>
 </head>
 <body>
-    
+    <div id="map"></div>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCeahs8xF5Kl8m5rv6f20PubtKtTkKgILc",
+            authDomain: "espia-do.firebaseapp.com",
+            databaseURL: "https://espia-do.firebaseio.com",
+            projectId: "espia-do",
+            storageBucket: "espia-do.appspot.com",
+            messagingSenderId: "202752331405",
+            appId: "1:202752331405:web:db903ebf4cc7f684c7dcc4"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        var coordenadas = {
+            lat : 0,
+            lng : 0
+        }
+
+        var propiedades = {
+            center : coordenadas,
+            zoom : 20
+        }
+
+        function initMap(){
+            map = new google.maps.Map(document.getElementById("map"), propiedades);
+
+            var icono = {
+                url : "viaje.png",
+                scaledSize: new google.maps.Size(50, 50),
+                origin: new google.maps.Point(0,0),
+                anchor: new google.maps.Point(0,0)
+            }
+
+            var marker = new google.maps.Marker({
+                position: { lat: 0, lng: 0},
+                icon: icono,
+                scaledSize: new google.maps.Size(50, 50),
+                map: map
+            });
+
+            if(navigator.geolocation){
+                setInterval(function() {
+                    moverPosicion(marker);
+                }, 5000);
+            }
+        }
+
+        function moverPosicion(marker){
+            db.collection("Persona").onSnapshot(snapshot => {
+                let changes = snapshot.docChanges();
+                changes.forEach(change => {
+                    if(change.type === "modified"){
+                        localizar(change.doc);
+                    }
+                });
+            });
+        }
+
+        function localizar(doc){
+            marker.setPosition( new google.maps.LatLng(doc.data().Latitud,doc.data().Longitud));
+            map.panTo(new google.maps.LatLng(doc.data().Latitud,doc.data().Longitud));
+            map.setCenter(pos);
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
