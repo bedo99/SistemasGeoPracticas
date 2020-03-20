@@ -49,7 +49,7 @@
             let changes = snapshot.docChanges();
             changes.forEach(change => {
                 if(change.type === "modified"){
-                    change.doc.data();
+                    renderPersonas(change.doc);
                 }
                 else if(change.type === "added"){
                     renderPersonas(change.doc);
