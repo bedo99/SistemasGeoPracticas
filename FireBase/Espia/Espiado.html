@@ -39,8 +39,10 @@
        
         function showPosition(position){
             db.collection("Persona").add({
-                Latitud: position.coords.latitude,
-                Longitud: position.coords.longitude         
+                Ubicacion: {
+                    Latitud: position.coords.latitude,
+                    Longitud: position.coords.longitude
+                }   
             });
         }
 
@@ -79,8 +81,10 @@
         function fireupdate(id){
             navigator.geolocation.getCurrentPosition(posicion => {
                         db.collection('Persona').doc(id).update({
-                                Latitud: posicion.coords.latitude,
-                                Longitud: posicion.coords.longitude   
+                            Ubicacion: {
+                                Latitud: position.coords.latitude,
+                                Longitud: position.coords.longitude
+                            }     
                         });
                     });
         }
