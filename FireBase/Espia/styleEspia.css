@@ -10,7 +10,7 @@ body, html {
 }
 
 body {
-  background-color: #D2DBDD;
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,121,104,1) 50%, rgba(0,0,0,1) 100%);
   -webkit-align-items: center;
   justify-content: center;
   align-items: center;
@@ -18,6 +18,7 @@ body {
 
 .cards {
     width: 79%;
+    padding-top: 15%;
     padding-left: 162px;
     padding-right: 150px;
     display: flex;
@@ -27,41 +28,12 @@ body {
 }
 
 .card--1 .card__img, .card--1 .card__img--hover {
-    background-image: url('https://i.blogs.es/d0b350/google-maps-go/450_1000.jpg');
+    background-image: url('https://i1.wp.com/www.tlaxcalaaldia.com/wp-content/uploads/2018/09/espia-secreto.png?fit=696%2C464&ssl=1');
 }
 
 .card--2 .card__img, .card--2 .card__img--hover {
-    background-image: url('https://www.eassos.com/blog/wp-content/uploads/2014/08/data-recovery-software01.png');
+    background-image: url('https://dioseltodoentodo.files.wordpress.com/2009/08/istock_000003095223xsmall.jpg');
 }
-
-.card--3 .card__img, .card--3 .card__img--hover {
-    background-image: url('https://files.merca20.com/uploads/2017/11/geolocalizacion-marketing.jpg');
-}
-
-.card--4 .card__img, .card--4 .card__img--hover {
-    background-image: url('https://ubitec.mx/wp-content/uploads/2019/09/proteccion_de_datos-809x423.jpg');
-}
-
-.card--5 .card__img, .card--5 .card__img--hover {
-    background-image: url('https://3.bp.blogspot.com/-o7T6JYUJFkQ/Vpgn5tMzB6I/AAAAAAAAEA4/eFG1QQcc8i0/s1600/google-maps-api-v3-lesson-1_1317724414567.png');
-}
-
-.card--6 .card__img, .card--6 .card__img--hover {
-  background-image: url('https://i.ytimg.com/vi/iosNuIdQoy8/maxresdefault.jpg');
-}
-
-.card--7 .card__img, .card--7 .card__img--hover {
-  background-image: url('https://www.osi.es/sites/default/files/images/blog/riesgos.png');
-} 
-
-.card--8 .card__img, .card--8 .card__img--hover {
-  background-image: url('https://image.freepik.com/vector-gratis/proximamente-letrero-neon_118419-15.jpg');
-}
-
-.card--9 .card__img, .card--8 .card__img--hover {
-  background-image: url('https://foreignpolicy.com/wp-content/uploads/2019/11/ISpy-logo-Twitter-card.jpg');
-}
-
 
 .card__img {
   visibility: hidden;
@@ -90,7 +62,7 @@ body {
 .card {
   margin-right: 25px;
   transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-  background-color: #fff;
+  background-color: rgb(83, 81, 81);
   width: 33.3%;
   position: relative;
   border-radius: 12px;
@@ -104,7 +76,7 @@ body {
 
 .card__info {
 z-index: 2;
-  background-color: #fff;
+  background-color: rgb(83, 81, 81);
   border-bottom-left-radius: 12px;
 border-bottom-right-radius: 12px;
    padding: 16px 24px 24px 24px;
