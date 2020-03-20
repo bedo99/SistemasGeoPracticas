@@ -70,12 +70,9 @@
         }
 
         function moverPosicion(marker){
-            db.collection("Persona").onSnapshot(snapshot => {
-                let changes = snapshot.docChanges();
-                changes.forEach(change => {
-                    if(change.type === "modified"){
-                        localizar(change.doc);
-                    }
+            db.collection('Persona').get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                        localizar(doc);
                 });
             });
         }
