@@ -38,7 +38,7 @@
         }
        
         function showPosition(position){
-            db.collection("Persona").add({
+            db.collection("Persona").doc().set({
                 Latitud: position.coords.latitude,
                 Longitud: position.coords.longitude         
             });
