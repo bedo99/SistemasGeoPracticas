@@ -78,7 +78,6 @@
         }
 
         function localizar(doc){
-            alert(doc.data().Latitud);
             marker.setPosition( new google.maps.LatLng(doc.data().Latitud,doc.data().Longitud));
             map.panTo(new google.maps.LatLng(doc.data().Latitud,doc.data().Longitud));
             map.setCenter(pos);
