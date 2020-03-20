@@ -39,10 +39,8 @@
        
         function showPosition(position){
             db.collection("Persona").add({
-                
-                    Latitud: position.coords.latitude,
-                    Longitud: position.coords.longitude
-                  
+                Latitud: position.coords.latitude,
+                Longitud: position.coords.longitude         
             });
         }
 
@@ -55,7 +53,7 @@
                 }
                 else if(change.type === "modified"){
                     let valorid = document.getElementById(change.doc.id);
-                    ListaPersona.updateChild(valorid);
+                    ListaPersona.updatedChild(valorid);
                 }
                 else if(change.type == "removed"){
                 let valorid = document.getElementById(change.doc.id);
@@ -74,7 +72,6 @@
             db.collection('Persona').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                         fireupdate(doc.id);
-                        
                 });
             });
         }
@@ -82,12 +79,10 @@
         function fireupdate(id){
             navigator.geolocation.getCurrentPosition(posicion => {
                         db.collection('Persona').doc(id).update({
-                            
-                                Latitud: position.coords.latitude,
-                                Longitud: position.coords.longitude
-                               
+                                Latitud: posicion.coords.latitude,
+                                Longitud: posicion.coords.longitude   
                         });
-            });
+                    });
         }
 
         function renderPersonas(doc){
