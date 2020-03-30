@@ -64,8 +64,17 @@
                                         content: información
                                     });
 
+                                    var icono = {
+                                        url : "https://static01.nyt.com/newsgraphics/2020/03/10/coronavirus-pathogen/0ee8f1a44b1932072653a0a75ff96486feb6f36d/covid-virus.png",
+                                        scaledSize: new google.maps.Size(50, 50),
+                                        origin: new google.maps.Point(0,0),
+                                        anchor: new google.maps.Point(0,0)
+                                    }
+
+                                    
                                     let marker = new google.maps.Marker({
                                         map: map,
+                                        icon: icono,
                                         position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
                                         title: marcador.CountryName + registro.cases
                                     });
