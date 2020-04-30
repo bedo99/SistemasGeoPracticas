@@ -84,6 +84,10 @@ body {
   background-image: url('https://image.freepik.com/vector-gratis/proximamente-letrero-neon_118419-15.jpg');
 }
 
+.card--14 .card__img, .card--14 .card__img--hover {
+  background-image: url('https://media.metrolatam.com/2019/06/02/googlecaido-8859c33d9823aead61e8d475cb0f8532-1200x800.jpg');
+}
+
 
 .card__img {
   visibility: hidden;
