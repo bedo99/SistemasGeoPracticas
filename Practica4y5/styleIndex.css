@@ -88,6 +88,10 @@ body {
   background-image: url('https://media.metrolatam.com/2019/06/02/googlecaido-8859c33d9823aead61e8d475cb0f8532-1200x800.jpg');
 }
 
+.card--15 .card__img, .card--15 .card__img--hover {
+  background-image: url('https://i.ytimg.com/vi/63DZ7nLpSDE/maxresdefault.jpg');
+}
+
 
 .card__img {
   visibility: hidden;
