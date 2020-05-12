@@ -32,16 +32,16 @@
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand bg-light" href="#">Amigos</a>
+        <a class="navbar-brand text-white" href="#">Amigos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link logged-in" href="#" data-toggle="modal" data-target="#micuentamodal">Mi Cuenta</a>
-            <a class="nav-item nav-link logged-in" href="#" id="salir">Salir</a>
-            <a class="nav-item nav-link logged-out" href="#" data-toggle="modal" data-target="#ingresarmodal">Ingresar</a>
-            <a class="nav-item nav-link logged-out" href="#" data-toggle="modal" data-target="#registratemodal">Regístrate</a>
+            <a class="nav-item nav-link logged-in text-default" href="#" data-toggle="modal" data-target="#micuentamodal">Mi Cuenta</a>
+            <a class="nav-item nav-link logged-in text-default" href="#" id="salir">Salir</a>
+            <a class="nav-item nav-link logged-out text-default" href="#" data-toggle="modal" data-target="#ingresarmodal">Ingresar</a>
+            <a class="nav-item nav-link logged-out text-default" href="#" data-toggle="modal" data-target="#registratemodal">Regístrate</a>
             </div>
         </div>
     </nav>
@@ -165,18 +165,18 @@
         </div>
     </div>
 
-    <!-- Mapa -->
+    
     <div class="container">
         <div class="row text-center" id="listadeplatillos">
-            Aqui va el mapa
         </div>
     </div>
 
-    <!-- <div class="container">
+    <!-- Mapa -->
+    <div class="container logged-in">
         <div class="row text-center" id="map">
             Aqui va el mapa
         </div>
-    </div> -->
+    </div>
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first
@@ -209,10 +209,26 @@
     //Apunta a nuestra variable de base de datos , para ahi hacer incersion y modificacion de tablas y campos
     const db = firebase.firestore();
 
+    function iniciaMapa(){
+            var map = new google.maps.Map(document.getElementById("map"),{
+                center: {
+                    lat: 21.152665,
+                    lng: -101.711201
+                },
+                zoom: 14
+            });
+
+            informacion = new google.maps.InfoWindow;
+
+            
+        }
+
     </script>
 
     <script src="autorizacion.js"></script>
     <script src="index.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA&callback=iniciaMapa"async defer></script>
 
 </body>
 </html>
