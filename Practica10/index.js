@@ -12,7 +12,7 @@ const listaloggedout = document.querySelectorAll('.logged-out');
                 <p>Correo: ${ user.email}</p>
                 <p>Teléfono: ${ doc.data().telefono }</p>
                 <p>Dirección: ${ doc.data().direccion }</p>
-                <p>Coordenadas: ${ doc.data().coordenadas.latitud } , ${ doc.data().coordenadas.longitude }</p>
+                <p>Coordenadas: ${ doc.data().coordenadas.latitude } , ${ doc.data().coordenadas.longitude }</p>
             `;
             datosdelacuenta.innerHTML = html;
         });
@@ -27,41 +27,19 @@ const listaloggedout = document.querySelectorAll('.logged-out');
         listaloggedout.forEach( item => item.style.display = 'block');
      }
  }
- 
- const listadeplatillos = document.getElementById('listadeplatillos');
 
- const obtienePlatillos = (data) =>{
+ const obtieneAmigos = (data) =>{
 
-
-    if(data.length){
-        
-        let html = '';
-
-        data.forEach(doc => {
-            const platillo = doc.data();
-            console.log(platillo);
-            const columna = `
-                <div class="col-12 col-md-4">
-                    <img src="imagenes/${platillo.imagen}" alt="${platillo.nombre}">
-                    <p>${platillo.nombre}</p>
-                    <p class="text-danger">$${platillo.precio}.00 pesos</p>
-                    <a href="https://paypal.me/BedollaFX/${platillo.precio}" target="_blank">
-                        <button class="btn btn-primary">Pagar Ahora</button>
-                    </a>
-                </div>
-            `;
-    
-            html += columna;
-    
-        });
-    
-        listadeplatillos.innerHTML = html;
-
-    }
-    else{
-        listadeplatillos.innerHTML = '<p class="text-center">Ingrese con sus claves para ver los platillos.</p>';
+    var propiedades = {
+        center: {
+            lat: 21.152665,
+            lng: -101.711201
+        },
+        zoom: 14
     }
 
+    var mapa = document.getElementById("map");
+    var map = new google.maps.Map(mapa,propiedades);
 
 
 

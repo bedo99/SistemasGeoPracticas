@@ -16,12 +16,12 @@ auth.onAuthStateChanged( user =>{
                 db.collection("usuarios").doc(user.uid).update({
                     coordenadas : pos
                 });
-                
+
             });
         }
 
-        db.collection('platillos').onSnapshot(snapshot =>{
-            obtienePlatillos(snapshot.docs);
+        db.collection('usuarios').onSnapshot(snapshot =>{
+            obtieneAmigos(snapshot.docs);
             configuraMenu(user);
         }, err => {
             console.log(err.message);
@@ -41,7 +41,7 @@ auth.onAuthStateChanged( user =>{
     }
     else{
         console.log('Usuario salió');
-        obtienePlatillos([]);
+        obtieneAmigos([]);
         configuraMenu();
     }
 
