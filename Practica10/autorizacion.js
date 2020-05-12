@@ -4,6 +4,22 @@ auth.onAuthStateChanged( user =>{
  
     if(user){
         console.log('Usuario entró');
+
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(position =>{
+
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                db.collection("usuarios").doc(user.uid).update({
+                    coordenadas : pos
+                });
+                
+            });
+        }
+
         db.collection('platillos').onSnapshot(snapshot =>{
             obtienePlatillos(snapshot.docs);
             configuraMenu(user);
