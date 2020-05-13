@@ -46,7 +46,7 @@ const listaloggedout = document.querySelectorAll('.logged-out');
         informacion = new google.maps.InfoWindow;
 
         var pos = { 
-            lat: doc.data().coordenadas.latitude,
+            lat: doc.data().coordenadas.latitud,
             lng: doc.data().coordenadas.longitude
         };
 
