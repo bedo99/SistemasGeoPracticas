@@ -46,8 +46,8 @@ const datosdelacuenta = document.querySelector('.datosdelacuenta');
         informacion = new google.maps.InfoWindow;
 
         var pos = { 
-            lat: doc.data().coordenadas.latitude,
-            lng: doc.data().coordenadas.longitude
+            latitude: doc.data().coordenadas.latitude,
+            longitude: doc.data().coordenadas.longitude
         };
 
         informacion.setPosition(pos);
