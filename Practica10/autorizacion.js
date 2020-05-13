@@ -14,8 +14,6 @@ auth.onAuthStateChanged( user =>{
                         longitude : position.coords.longitude
                     }
                 });
-                
-                
 
             });
         }

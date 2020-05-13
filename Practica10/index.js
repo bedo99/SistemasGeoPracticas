@@ -1,6 +1,6 @@
 const listaloggedout = document.querySelectorAll('.logged-out');
-const listaloggedin = document.querySelectorAll('.logged-in');
-const datosdelacuenta = document.querySelector('.datosdelacuenta');
+ const listaloggedin = document.querySelectorAll('.logged-in');
+ const datosdelacuenta = document.querySelector('.datosdelacuenta');
  
  const configuraMenu = (user) => {
      if(user){
@@ -46,10 +46,8 @@ const datosdelacuenta = document.querySelector('.datosdelacuenta');
         informacion = new google.maps.InfoWindow;
 
         var pos = { 
-
             lat: doc.data().coordenadas.latitude,
             lng: doc.data().coordenadas.longitude
-
         };
 
         informacion.setPosition(pos);
