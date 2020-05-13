@@ -47,9 +47,9 @@ const datosdelacuenta = document.querySelector('.datosdelacuenta');
 
         var pos = { 
 
-            latitude: doc.data().coordenadas.latitude,
-            longitude: doc.data().coordenadas.longitude
-            
+            lat: doc.data().coordenadas.latitude,
+            lng: doc.data().coordenadas.longitude
+
         };
 
         informacion.setPosition(pos);
