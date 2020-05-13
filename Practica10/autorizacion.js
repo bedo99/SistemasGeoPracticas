@@ -1,22 +1,23 @@
-
-
 auth.onAuthStateChanged( user =>{
  
     if(user){
         console.log('Usuario entró');
 
         if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(position =>{
 
-                db.collection("usuarios").doc(user.uid).update({
+            navigator.geolocation.getCurrentPosition( position =>{
+                
+
+                db.collection('usuarios').doc(user.uid).update({
                     coordenadas : {
                         latitude : position.coords.latitude,
-                        longitude: position.coords.longitude
+                        longitude : position.coords.longitude
                     }
                 });
 
             });
         }
+
 
         db.collection('usuarios').onSnapshot(snapshot =>{
             obtieneAmigos(snapshot.docs);

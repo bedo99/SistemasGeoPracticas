@@ -1,6 +1,6 @@
 const listaloggedout = document.querySelectorAll('.logged-out');
- const listaloggedin = document.querySelectorAll('.logged-in');
- const datosdelacuenta = document.querySelector('.datosdelacuenta');
+const listaloggedin = document.querySelectorAll('.logged-in');
+const datosdelacuenta = document.querySelector('.datosdelacuenta');
  
  const configuraMenu = (user) => {
      if(user){
@@ -27,19 +27,19 @@ const listaloggedout = document.querySelectorAll('.logged-out');
         listaloggedout.forEach( item => item.style.display = 'block');
      }
  }
-
+ 
  const obtieneAmigos = (data) =>{
 
-    var propiedades = {
-        center: {
-            lat: 21.152665,
-            lng: -101.711201
-        },
-        zoom: 14
+    var propiedades = { 
+        center: { 
+                    lat: 21.152639, lng: -101.711598 
+                }, 
+        zoom: 14 
     }
 
-    var mapa = document.getElementById("map");
-    var map = new google.maps.Map(mapa,propiedades);
+    var mapa =  document.getElementById("map")
+    var map = new google.maps.Map(mapa, propiedades);
+
 
     data.forEach( doc => {
         
