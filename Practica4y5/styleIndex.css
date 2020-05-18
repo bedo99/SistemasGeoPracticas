@@ -96,6 +96,10 @@ body {
   background-image: url('https://www.bezzia.com/wp-content/uploads/2017/03/amigos-viaje-830x552.jpg');
 }
 
+.card--17 .card__img, .card--17 .card__img--hover {
+  background-image: url('https://base.imgix.net/files/base/ebm/electronicdesign/image/2019/03/electronicdesign_26225_egopromo.png?auto=format&fit=crop&h=432&w=768');
+}
+
 
 .card__img {
   visibility: hidden;
