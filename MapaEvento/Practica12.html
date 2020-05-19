@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en mapas</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Practica12.css">
+
+    <style>
+
+        html, body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #mapa1, #mapa2, #mapa3, #mapa4, #mapa5, #mapa6 {
+            width: 100%;
+            height: 340px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid m-2 text-center">
+        <div class="row">
+            <div class="col-12">
+                <h1>Eventos en Mapas</h1>
+            </div>
+            <div class="col-12">
+                <h1>Mas Informacion en:
+                    <a href="https://developers.google.com/maps/documentation/javascript/events">Google Events</a>
+                </h1>
+                
+            </div>
+            
+        </div>
+
+        <section class="tabs">
+            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+            <label for="tab-1" class="tab-label-1">Evento Click Mapa</label>
+            <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+            <label for="tab-2" class="tab-label-2">Regresa al centro</label>
+            <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" />
+            <label for="tab-3" class="tab-label-3">Obtiene nivel de Zoom</label>
+            <input id="tab-4" type="radio" name="radio-set" class="tab-selector-4" />
+            <label for="tab-4" class="tab-label-4">Coloca marcador y mueve al centro</label>
+            <div class="content">
+              <div class="content-1">
+                <h2>Tab 1</h2>
+                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div id="mapa1"></div>
+                        <p>Evento Click en Mapa</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div id="mapa2"></div>
+                        <p>Regresa al centro</p>
+                    </div>
+                </div>
+                </div>
+              <div class="content-2">
+                <h2>Tab 2</h2>
+                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+              </div>
+              <div class="content-3">
+                <h2>Tab 3</h2>
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+              </div>
+              <div class="content-4">
+                <h2>Tab 4</h2>
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commod. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+              </div>
+            </div>
+          </section>
+
+        
+        
+        
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div id="mapa3"></div>
+                <p>Obtiene nivel de Zoom</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div id="mapa4"></div>
+                <p>Coloca marcador y mueve al centro</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div id="mapa5"></div>
+                <p>Obtiene coordenadas con mapsMouseEvent</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div id="mapa6"></div>
+                <p>addDomListener</p>
+                <button class="btn btn-primary" id="btnCentrar">Centrar</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+
+        function iniciaMapa(){
+
+
+            var coordenadas = {  lat: 21.152639, lng:  -101.711598 };
+
+            var propiedades = {
+                center: coordenadas,
+                zoom: 12
+            };
+
+            var mapa1 = new google.maps.Map(document.getElementById('mapa1'),propiedades);
+
+            var marker = new google.maps.Marker({
+                position: coordenadas,
+                map: mapa1
+            });
+
+            marker.addListener('click', function(){
+                mapa1.setZoom(8);
+                mapa1.setCenter(marker.getPosition());
+            });
+
+
+            /*     MAPA2       */
+
+            var mapa2 = new google.maps.Map(document.getElementById('mapa2'),propiedades);
+
+            var marker2 = new google.maps.Marker({
+                position: coordenadas,
+                map: mapa2
+            });
+
+            mapa2.addListener('center_changed', function(){
+
+                window.setTimeout( function(){
+                    mapa2.panTo(marker2.getPosition());
+                },3000);
+
+            });
+
+
+
+            /*     MAPA3       */
+
+            var mapa3 = new google.maps.Map(document.getElementById('mapa3'),propiedades);
+
+            var infowindow = new google.maps.InfoWindow({
+                content : 'Cambia el zoom',
+                position : coordenadas
+            });
+
+            infowindow.open(mapa3);
+
+            mapa3.addListener('zoom_changed', function(){
+                infowindow.setContent('Zoom' + mapa3.getZoom());
+            });
+
+
+            /*     MAPA4      */
+
+            var mapa4 = new google.maps.Map(document.getElementById('mapa4'),propiedades);
+
+
+            mapa4.addListener('click', function(e){
+                console.log(e.latLng);
+
+                estableceMarcador(e.latLng);
+            });
+
+            function estableceMarcador(latLng){
+
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: mapa4
+                });
+
+                mapa4.panTo(latLng);
+
+            }
+
+            /*     MAPA5      */
+
+            var mapa5 = new google.maps.Map(document.getElementById('mapa5'),propiedades);
+
+            var infowindow = new google.maps.InfoWindow({
+                content : 'Haz click para obtener las coordenadas',
+                position : coordenadas
+            });
+
+            infowindow.open(mapa5);
+
+            mapa5.addListener('click', function(evento){
+                infowindow.close();
+
+                infowindow = new google.maps.InfoWindow({ position: evento.latLng });
+                infowindow.setContent(evento.latLng.toString());
+                infowindow.open(mapa5);
+
+            });
+
+            /*     MAPA6   */
+
+            var mapa6 = new google.maps.Map(document.getElementById('mapa6'),propiedades);
+
+            google.maps.event.addDomListener(mapa6, 'click', function(){
+                window.alert(' Se hizo click en el mapa');
+            });
+
+            var boton = document.getElementById('btnCentrar');
+            google.maps.event.addDomListener(boton, 'click', function(){
+                 mapa6.panTo(coordenadas);
+            });
+
+
+
+
+
+
+        }
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA&callback=iniciaMapa" async defer></script>
+
+</body>
+</html>
