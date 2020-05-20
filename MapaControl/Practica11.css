@@ -1,0 +1,103 @@
+html{
+	background-color: LightGray;
+	}
+	
+	body{
+	margin: auto;
+	background-color: white;
+	}
+	
+	header{
+	height: 200px;
+	text-align: center;
+	line-height: 200px;
+	font-size: 35px;
+	color: white;
+	background-color: black;
+	}
+	
+	.tabs ul
+	{
+	list-style: none;
+	text-align: center;
+	margin: auto;
+	background-color: rgb(243, 243, 243);
+	margin: 0px;
+	padding: 0px;
+	
+	}
+	
+	.tabs li 
+	{
+	display:inline-block;
+	width: 150px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 16px;
+	background-color: gray;
+	}
+	
+	section{
+	display: none;
+	padding: 25px 60px 35px;
+	background-color: white;
+	}
+	
+	#tab1:target {
+	display: block;
+	}
+	
+	#tab2:target {
+	display: block;
+	}
+	
+	#tab3:target {
+	display: block;
+	}
+	
+	#tab4:target {
+	display: block;
+	}
+	
+	#tab5:target {
+	display: block;
+	}
+	
+	#tab6:target {
+	display: block;
+	}
+	
+	li:first-child {
+	  background-color: #0C0C93;
+	}
+	
+	li:nth-of-type(2) {
+	  background-color: #132493;
+	}
+	
+	li:nth-of-type(3) {
+	  background-color: #1B3C93;
+	}
+	
+	li:nth-of-type(4) {
+	  background-color: #225593;
+	}
+	
+	li:nth-of-type(5) {
+	  background-color: #2A6D93;
+	}
+	
+	li:nth-of-type(6) {
+	  background-color: #318593;
+	}
+	
+	li:hover {
+	  background-color: black;
+	}
+	
+	a
+	{
+	text-decoration: none;
+	color: rgb(27, 236, 226);
+	}
+	

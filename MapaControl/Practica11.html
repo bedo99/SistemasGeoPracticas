@@ -6,6 +6,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Practica11.css">
 
     <style>
 
@@ -25,39 +26,65 @@
     <div class="container-fluid m-2 text-center">
         <div class="row">
             <div class="col-12">
-                <h1>Controles de Mapa</h1>
+                <h1>Controles en Mapas</h1>
             </div>
+            <div class="col-12">
+                <h1>Mas Informacion en:
+                    <a href="https://developers.google.com/maps/documentation/javascript/controls">Google Controls</a>
+                </h1>
+                
+            </div>
+            
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+
+
+        <div class="tabs">
+            <ul>
+                <li><a href="#tab1">Tab 1</a></li
+                ><li><a href="#tab2">Tab 2</a></li
+                ><li><a href="#tab3">Tab 3</a></li
+                ><li><a href="#tab4">Tab 4</a></li
+                ><li><a href="#tab5">Tab 5</a></li
+                ><li><a href="#tab6">Tab 6</a></li>
+            </ul>
+        
+            <section id="tab1">
                 <div id="mapa1"></div>
-                <p>Mapa con controles estándar</p>
-            </div>
-            <div class="col-12 col-md-6">
+                <h2>Mapa con controles estándar</h2>
+               
+                </section><!-- #tab1 -->
+        
+            <section id="tab2">
                 <div id="mapa2"></div>
-                <p>Mapa sin controles</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+                <h2>Mapa sin controles</h2>
+                
+            </section><!-- #tab2-->
+                
+            <section id="tab3">
                 <div id="mapa3"></div>
-                <p>Mapa con zoom desactivado</p>
-            </div>
-            <div class="col-12 col-md-6">
+                <h2>Mapa con zoom desactivado</h2>
+
+            </section><!-- #tab3-->
+        
+            <section id="tab4">
                 <div id="mapa4"></div>
-                <p>Mapa con ControlOptions</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+                <h2>Mapa con ControlOptions</h2>
+                
+            </section><!-- #tab4-->
+        
+            <section id="tab5">
                 <div id="mapa5"></div>
-                <p>Mapa con ControlPosition</p>
-            </div>
-            <div class="col-12 col-md-6">
+                <h2>Mapa con ControlPosition</h2>
+            </section><!-- #tab5-->
+        
+            <section id="tab6">
                 <div id="mapa6"></div>
-                <p>Mapa con Restricting MapBounds</p>
-            </div>
-        </div>
+                <h2>Mapa con Restricting MapBounds</h2>
+            </section><!-- #tab6-->
+
+
+
+        
     </div>
     
 
