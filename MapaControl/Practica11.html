@@ -68,12 +68,14 @@
         
             <section id="tab4">
                 <div id="mapa4"></div>
+                
                 <h2>Mapa con ControlOptions</h2>
                 
             </section><!-- #tab4-->
         
             <section id="tab5">
                 <div id="mapa5"></div>
+
                 <h2>Mapa con ControlPosition</h2>
             </section><!-- #tab5-->
         
@@ -81,6 +83,7 @@
                 <div id="mapa6"></div>
                 <h2>Mapa con Restricting MapBounds</h2>
             </section><!-- #tab6-->
+
 
 
 
@@ -100,7 +103,14 @@
                 zoom: 12
             };
 
+
+
+
+
             var mapa1 = new google.maps.Map(document.getElementById('mapa1'),propiedades1);
+
+
+
 
 
             var propiedades2 = {
@@ -109,7 +119,12 @@
                 disableDefaultUI: true
             };
 
+
+
+
             var mapa2 = new google.maps.Map(document.getElementById('mapa2'),propiedades2);
+
+
 
             var propiedades3 = {
                 center: coordenadas,
@@ -118,7 +133,11 @@
                 scaleControl: false
             };
 
+
+
             var mapa3 = new google.maps.Map(document.getElementById('mapa3'),propiedades3);
+
+
 
 
             var propiedades4 = {
@@ -131,7 +150,11 @@
                 }
 
             };
+
+
             var mapa4 = new google.maps.Map(document.getElementById('mapa4'),propiedades4);
+
+
 
 
             var propiedades5 = {
@@ -141,20 +164,29 @@
                 mapTypeControlOptions : {
                     style : google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
                     position : google.maps.ControlPosition.TOP_CENTER
+
                 },
+
                 zoomControl : true,
                 zoomControlOptions : {
                     position : google.maps.ControlPosition.LEFT_CENTER
                 },
+
                 scaleControl : true,
                 streetViewControl: true,
                 streetViewControlOptions : {
                     position : google.maps.ControlPosition.LEFT_TOP
                 },
+
                 fullscreenControl : true
 
+
             };
+
+
+
             var mapa5 = new google.maps.Map(document.getElementById('mapa5'),propiedades5);
+
 
 
             var limites = {
@@ -164,6 +196,7 @@
                 east:  -101.092990
             }
 
+
             var propiedades6 = {
                 center: coordenadas,
                 zoom: 12,
@@ -172,7 +205,10 @@
                     strictBounds : false
                 }
             };
+
             var mapa6 = new google.maps.Map(document.getElementById('mapa6'),propiedades6);
+
+
 
         }
 
