@@ -109,6 +109,10 @@ body {
   background-image: url('https://notidehoy.com/wp-content/uploads/2020/02/Google-Maps-trucos-Foto-Archivo.jpg');
 }
 
+.card--22 .card__img, .card--22 .card__img--hover {
+  background-image: url('https://s1.cdn.autoevolution.com/images/news-pictures-600x/google-reveals-maps-numbers-10-million-miles-of-street-view-imagery-139829-7.jpg');
+}
+
 
 .card__img {
   visibility: hidden;
