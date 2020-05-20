@@ -82,50 +82,24 @@
                 <h2>addDomListener</h2>
                 <button class="btn btn-primary" id="btnCentrar">Centrar</button>
             </section><!-- #tab6-->
-
-
-
-        <div class="row">
-            <div class="col-12 col-md-6">
-                
-                <p></p>
-            </div>
-            <div class="col-12 col-md-6">
-                
-                <p></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                
-            </div>
-            <div class="col-12 col-md-6">
-                
-                <p></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                
-            </div>
-            <div class="col-12 col-md-6">
-                
-            </div>
-        </div>
-    </div>
     
-
     <script>
 
         function iniciaMapa(){
 
 
+
+
             var coordenadas = {  lat: 21.152639, lng:  -101.711598 };
+
+
 
             var propiedades = {
                 center: coordenadas,
                 zoom: 12
             };
+
+            /* */
 
             var mapa1 = new google.maps.Map(document.getElementById('mapa1'),propiedades);
 
@@ -134,13 +108,15 @@
                 map: mapa1
             });
 
+
+
             marker.addListener('click', function(){
                 mapa1.setZoom(8);
                 mapa1.setCenter(marker.getPosition());
             });
 
 
-            /*     MAPA2       */
+            /* */
 
             var mapa2 = new google.maps.Map(document.getElementById('mapa2'),propiedades);
 
@@ -159,7 +135,7 @@
 
 
 
-            /*     MAPA3       */
+            /* */
 
             var mapa3 = new google.maps.Map(document.getElementById('mapa3'),propiedades);
 
@@ -175,7 +151,7 @@
             });
 
 
-            /*     MAPA4      */
+            /* */
 
             var mapa4 = new google.maps.Map(document.getElementById('mapa4'),propiedades);
 
@@ -197,7 +173,7 @@
 
             }
 
-            /*     MAPA5      */
+            /* */
 
             var mapa5 = new google.maps.Map(document.getElementById('mapa5'),propiedades);
 
@@ -217,7 +193,7 @@
 
             });
 
-            /*     MAPA6   */
+            /* */
 
             var mapa6 = new google.maps.Map(document.getElementById('mapa6'),propiedades);
 
@@ -238,6 +214,9 @@
         }
 
         
+
+
+
 
     </script>
 
