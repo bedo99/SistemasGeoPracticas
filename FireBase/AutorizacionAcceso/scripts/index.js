@@ -1,8 +1,8 @@
 const listaloggedout = document.querySelectorAll('.logged-out');
- const listaloggedin = document.querySelectorAll('.logged-in');
- const datosdelacuenta = document.querySelector('.datosdelacuenta');
+const listaloggedin = document.querySelectorAll('.logged-in');
+const datosdelacuenta = document.querySelector('.datosdelacuenta');
  
- const configuraMenu = (user) => {
+const configuraMenu = (user) => {
      if(user){
         
 
